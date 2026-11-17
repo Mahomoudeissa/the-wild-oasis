@@ -1,0 +1,39 @@
+import CreateCabinForm from "../cabins/CreateCabinForm";
+import Button from "../../ui/Button";
+import Modal from "../../ui/Modal";
+
+// const AddCabin = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <div>
+//       <Button onClick={() => setIsOpen((prev) => !prev)}>Add new cabin</Button>
+
+//       {isOpen && (
+//         <Modal onClose={() => setIsOpen(false)}>
+//           <CreateCabinForm onCloseModal={() => setIsOpen(false)} />
+//         </Modal>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default AddCabin;
+
+const AddCabin = () => {
+  return (
+    <div>
+      <Modal>
+        <Modal.Open opens="cabin-form">
+          <Button>Add new cabin</Button>
+        </Modal.Open>
+
+        <Modal.Window name="cabin-form">
+          <CreateCabinForm />
+        </Modal.Window>
+      </Modal>
+    </div>
+  );
+};
+
+export default AddCabin;
